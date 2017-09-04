@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="shortUrlApp">
+
+<head>
+	<title>URL Shortener</title>
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+	<script src="/app.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>FreeCodeCamp API Basejump: URL Shortener Microservice</h1>
+
+		<section ng-controller="shortAppCtrl">
+			<input placeholder="Enter URL" ng-model="urlToShorten">
+			<a class="btn btn-primary" ng-href="/new/{{urlToShorten}}" target="_blank">Get ShortURL</a>
+		</section>
+
+		<ul>
+		<h3>User stories:</h3>
+		<li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
+		<li>When I visit that shortened URL, it will redirect me to my original link.</li>
+		</ul>
+
+		<h4>Example creation usage:</h4>
+		<div class="row">
+    		<div class="col-xs-12">
+        		<a href="/new/https://www.google.com" target="_blank">https://salty-quilt.glitch.me/new/https://www.google.com</a>
+  	   		</div>
+        	<div class="col-xs-12">
+            	<a href="/new/http://foo.com:80" target="_blank">https://salty-quilt.glitch.me/new/http://foo.com:80</a>  
+        	</div>
+    	</div>
+
+	    <h4>Example creation usage:</h4>
+	    <p>{"original_url": "https://www.google.com", "short_url": "5492", "_id": "59acec14fed4f63b7b599627"}</p>
+
+	    <h4>Usage:</h4>
+	    <p>https://salty-quilt.glitch.me/5492</p>
+
+	    <h4>Will redirect to:</h4>
+	    <p>https://www.google.com/</p>
+	</div>
+</body>
+</html>
